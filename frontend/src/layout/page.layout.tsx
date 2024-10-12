@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-const PageLayout = () => {
+const PageLayout: FC = () => {
   return <Outlet />;
 };
 

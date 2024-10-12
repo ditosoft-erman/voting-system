@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import Sidebar from '../components/sidebar';
 import { Outlet } from 'react-router-dom';
 
-const AdminLayout = () => {
+const AdminLayout: FC = () => {
   return (
     <div className="min-h-screen flex">
       <div className="w-64 min-h-screen">
