@@ -5,6 +5,7 @@ import DashboardPage from "../modules/admin/dashboard/dashboard.page";
 import AdminLayout from "../layout/admin.layout";
 import CandidatePage from "../modules/admin/candidates/candidate.page";
 import PositionPage from "../modules/admin/position/position.page";
+import ErrorPage from "../modules/error/error.page";
 
 export const router = createBrowserRouter([
     {
@@ -34,7 +35,10 @@ export const router = createBrowserRouter([
             Component: PositionPage
         }
       ]
+    }, {
+      path: "*",
+      Component:ErrorPage
     }
-  ])
+  ]);
   
   export default router;
