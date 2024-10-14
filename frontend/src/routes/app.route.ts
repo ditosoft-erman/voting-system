@@ -6,8 +6,8 @@ import AdminLayout from "../layout/admin.layout";
 import CandidatePage from "../modules/admin/candidates/candidate.page";
 import PositionPage from "../modules/admin/position/position.page";
 import ErrorPage from "../modules/error/error.page";
-import BallotPage from "../modules/user/ballots/ballots.page";
-import DashboardPageStudent from "../modules/user/dashboard/dashboard.page";
+import BallotPage from "../modules/student/ballots/ballots.page";
+import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
 export const router = createBrowserRouter([
     {
       path: '',
@@ -38,8 +38,9 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    
     {
-      path: '/Student',
+      path: '/student',
       Component:AdminLayout,
       children:[
         {
