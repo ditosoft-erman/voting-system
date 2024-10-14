@@ -7,7 +7,9 @@ import CandidatePage from "../modules/admin/candidates/candidate.page";
 import PositionPage from "../modules/admin/position/position.page";
 import ErrorPage from "../modules/error/error.page";
 import BallotPage from "../modules/student/ballots/ballots.page";
-import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
+import ForgotPassword from "../modules/authentication/forgot-password.page";
+import ResetPassword from "../modules/authentication/reset-password.page";
+// import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
 export const router = createBrowserRouter([
     {
       path: '',
@@ -16,6 +18,15 @@ export const router = createBrowserRouter([
         {
           index: true,
           Component: LoginPage
+        },
+        {
+          path: '/forgot-password',
+          Component: ForgotPassword
+
+        },
+        {
+          path: '/reset-password',
+          Component: ResetPassword
         }
       ]
     },
