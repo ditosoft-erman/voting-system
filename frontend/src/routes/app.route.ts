@@ -6,7 +6,8 @@ import AdminLayout from "../layout/admin.layout";
 import CandidatePage from "../modules/admin/candidates/candidate.page";
 import PositionPage from "../modules/admin/position/position.page";
 import ErrorPage from "../modules/error/error.page";
-
+import BallotPage from "../modules/user/ballots/ballots.page";
+import DashboardPageStudent from "../modules/user/dashboard/dashboard.page";
 export const router = createBrowserRouter([
     {
       path: '',
@@ -24,7 +25,8 @@ export const router = createBrowserRouter([
       children: [
         {
           index: true,
-          Component: DashboardPage
+          Component: DashboardPage,
+         
         },
         {
             path: 'candidate',
@@ -35,10 +37,28 @@ export const router = createBrowserRouter([
             Component: PositionPage
         }
       ]
-    }, {
+    },
+    {
+      path: '/Student',
+      Component:AdminLayout,
+      children:[
+        {
+          index: true,
+          Component: BallotPage
+
+      }
+    ]
+    },
+    
+
+    
+    {
       path: "*",
       Component:ErrorPage
     }
+
+
+
   ]);
   
   export default router;
