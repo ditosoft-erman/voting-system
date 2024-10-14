@@ -48,7 +48,7 @@ const LoginPage: FC = () => {
                   placeholder="Enter your Password here"
                 />
                 <p className="text-right text-gray-500 text-xs">
-                  <Link to="/forgotPassword" className="hover:underline">
+                  <Link to="/forgot-password" className="hover:underline">
                     Forgot your password?
                   </Link>
                 </p>
