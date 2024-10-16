@@ -12,6 +12,7 @@ const BallotPage: FC = () => {
       <div className="flex p-6">
         {/* Left Column for Announcements and Vote Tally */}
         <div className="flex-1 space-y-6">
+          
           {/* Announcements Section */}
           <div className="bg-white shadow-lg rounded-md p-4">
             <h2 className="bg-blue-900 text-white text-center py-2 rounded-t-md">
