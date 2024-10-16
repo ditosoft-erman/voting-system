@@ -38,16 +38,23 @@ export const router = createBrowserRouter([
         }
       ]
     },
-    
+
     {
       path: '/student',
       Component:AdminLayout,
       children:[
-        {
-          index: true,
-          Component: BallotPage
+    
+      {
+        index: true,
+        Component: DashboardPageStudent
 
-      }
+    },
+
+    {
+      path: 'ballot',
+      Component: BallotPage
+  },
+
     ]
     },
     
