@@ -10,6 +10,8 @@ import BallotPage from "../modules/student/ballots/ballots.page";
 import ForgotPassword from "../modules/authentication/forgot-password.page";
 import ResetPassword from "../modules/authentication/reset-password.page";
 import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
+import feedbacks from "../modules/student/feedbacks/feedbacks";
+import AccountPage from "../modules/student/accounts/accounts.page";
 export const router = createBrowserRouter([
     {
       path: '',
@@ -49,16 +51,23 @@ export const router = createBrowserRouter([
         }
       ]
     },
-    
+
     {
       path: '/student',
       Component:AdminLayout,
       children:[
-        {
-          index: true,
-          Component: BallotPage
+    
+      {
+        index: true,
+        Component: AccountPage
 
-      }
+    },
+
+    {
+      path: 'ballot',
+      Component: BallotPage
+  },
+
     ]
     },
     
