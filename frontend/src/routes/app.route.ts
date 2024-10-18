@@ -9,7 +9,7 @@ import ErrorPage from "../modules/error/error.page";
 import BallotPage from "../modules/student/ballots/ballots.page";
 import ForgotPassword from "../modules/authentication/forgot-password.page";
 import ResetPassword from "../modules/authentication/reset-password.page";
-// import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
+import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
 export const router = createBrowserRouter([
     {
       path: '',
