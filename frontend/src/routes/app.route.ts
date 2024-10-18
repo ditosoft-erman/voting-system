@@ -8,6 +8,8 @@ import PositionPage from "../modules/admin/position/position.page";
 import ErrorPage from "../modules/error/error.page";
 import BallotPage from "../modules/student/ballots/ballots.page";
 import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
+import feedbacks from "../modules/student/feedbacks/feedbacks";
+import AccountPage from "../modules/student/accounts/accounts.page";
 export const router = createBrowserRouter([
     {
       path: '',
@@ -46,7 +48,7 @@ export const router = createBrowserRouter([
     
       {
         index: true,
-        Component: DashboardPageStudent
+        Component: AccountPage
 
     },
 
