@@ -12,6 +12,7 @@ import ResetPassword from "../modules/authentication/reset-password.page";
 import DashboardPageStudent from "../modules/student/dashboard/dashboard.page";
 import feedbacks from "../modules/student/feedbacks/feedbacks";
 import AccountPage from "../modules/student/accounts/accounts.page";
+import StudentLayout from "../layout/student.layout";
 export const router = createBrowserRouter([
     {
       path: '',
@@ -48,13 +49,17 @@ export const router = createBrowserRouter([
         {
             path: 'position',
             Component: PositionPage
+        },
+        {
+            path: 'ballot',
+            Component: BallotPage
         }
       ]
     },
 
     {
       path: '/student',
-      Component:AdminLayout,
+      Component:StudentLayout,
       children:[
     
       {

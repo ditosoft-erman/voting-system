@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Sidebar from '../components/sidebar';
+import Sidebar from '../components/sidebar/sidebar';
 import { Outlet } from 'react-router-dom';
 
 const StudentLayout: FC = () => {
