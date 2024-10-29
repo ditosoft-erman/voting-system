@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import Modal from '../../../components/modal/add-position';
+import AddModal from '../../../components/modal/add-position';
+import AddButton from '../../../components/add-button/add-button';
+import CloseButton from '../../../components/close-button/close-button';
 
 const PositionPage: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false); // Changed from isModalOpen to modalOpen
@@ -26,7 +28,7 @@ const PositionPage: React.FC = () => {
         Add Position
       </button>
 
-      <Modal isOpen={modalOpen} title="Add Position" onClose={closeModal}>
+      <AddModal isOpen={modalOpen} title="Add Position" onClose={closeModal}>
         <form>
           <div className="mb-4">
             <label className="block text-gray-700">Position</label>
@@ -49,23 +51,12 @@ const PositionPage: React.FC = () => {
             />
           </div>
           <div className="flex justify-end space-x-4">
-            <button
-              type="button"
-              onClick={closeModal}
-              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              onClick={handleSave}
-              className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500"
-            >
-              Save
-            </button>
+            <CloseButton onClick={handleSave}>Close</CloseButton>
+
+            <AddButton onClick={handleSave}>Add</AddButton>
           </div>
         </form>
-      </Modal>
+      </AddModal>
     </div>
   );
 };
