@@ -1,41 +1,37 @@
 const express = require('express');
-const mysql = require('mysql2');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Enable CORS to allow requests from React frontend
+// Import routes
+const userRoutes = require('./routes/userRoutes');
+const userRoleRoutes = require('./routes/userRoleRoutes');
+const userAuthenticationRoutes = require('./routes/authenticationRoute');
+
+// Middleware
 app.use(cors());
-app.use(express.json()); // For parsing application/json
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// MySQL Database Connection
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',  // Your MySQL username
-  password: 'password',  // Your MySQL password
-  database: 'mydb'  // Your database name
+// Routes
+app.use('/api/users', userRoutes);
+app.use('/api/userRoles', userRoleRoutes);
+app.use('/api/userAuthentication', userAuthenticationRoutes);
+
+// Test endpoint
+app.get('/', (req, res) => {
+  res.status(200).send("Hello World");
 });
 
-db.connect(err => {
-  if (err) {
-    console.error('Error connecting to MySQL:', err);
-    return;
-  }
-  console.log('Connected to MySQL');
-});
 
-// Define API endpoint
-app.get('/users', (req, res) => {
-  db.query('SELECT * FROM users', (err, results) => {
-    if (err) {
-      res.status(500).json({ error: err });
-    } else {
-      res.json(results);
-    }
-  });
-});
+const db = require('./models/main');
+db.sequelize.sync()
+  .then(()=>console.log("Sync db."))
+  .catch(err=>console.log("Failed: " + err.message))
 
 // Start the server
-app.listen(5000, () => {
-  console.log('Server running on port 5000');
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
