@@ -155,8 +155,8 @@ const Sidebar = () => {
           </Link>
           <div className="m-7">
             <Link
-              to="/logout"
-              className="block py-2 px-3 hover:bg-gray-700 rounded-md "
+              to="/"
+              className="block py-2 px-3 hover:bg-red-200 rounded-md "
             >
               <p className="text-red-700 font-bold text-xl text-center">
                 Logout
